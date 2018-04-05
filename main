@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class findAceOfSpades {
+
+    public static void main(String[] args) {
+        String[] value = {"Two", "Three", "Four", "Five", "Six", "Seven", 
+                "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"};
+        String[] suit = {"\u2666", "\u2665", "\u2663", "\u2664"};//diamonds, hearts, clubs, spades
+                
+        int seed=0, s=0, v=0;
+        boolean upMySleeve = false;
+        Random draw = new Random(seed);
+    
+        for (seed=0;upMySleeve=true;seed++) {
+            s=draw.nextInt(4);
+            v=draw.nextInt(13);
+            System.out.printf("%s of %s\n",value[v],suit[s]);
+            if (s==3 && v==12) {
+                upMySleeve = true;
+                System.out.printf("^ Seed no: %d\n",seed);
+                break;
+            }
+        }
+    }
+}
